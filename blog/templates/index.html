@@ -119,16 +119,28 @@
     <div>
       <center>
         <h6 class="heading font-x3">Imagems relacionadas aos topicos</h6>
-        <img src="img/mudancasdapuberdade.webp" alt="">
-        <p>mudanças corporais durante a puberdade feminina e masculina</p>
-        <img src="img/Imagem do WhatsApp de 2024-07-22 à(s) 16.35.01_01cf9eaa.jpg" alt="">
-        <p>Problemas emocionais na pré-adolecencia</p>
+        <section class= "post container">
+          {% for post in posts%}
+          {% if post.imagem %}
+        <img src="{{ post.image.url }}" alt="">
+        <h3>mudanças corporais durante a puberdade feminina e masculina</h3>
+
+        <img src="{% static 'img/mudancasdapuberdade.jpg' %}" alt="" class = "post-img">
+          <h3>Mudanças físicas nos corpos femininos e masculino</h3>
+        <img src="{% static 'img/img2.jpg' %}" alt="" class = "post-img">
+        
+          {% endif %}
+          <div>
+        <img src="{% static 'img/img1.jpg'%}" alt="" class="post-img"
+          </div>
+        <h3>Problemas emocionais na pré-adolecencia</h3>
+          {%endfor%} 
       </center>
     </div>
     <div class="wrapper row4">
       <footer id="footer" class="hoc clear">
         <div class="center btmspace-50"> 
-          
+         
           <h6 class="heading">Fontes</h6>
           <a class="nospace"href="https://www.todamateria.com.br/puberdade/">Site 1</a>
           <a class="nospace"href="https://www.vittude.com/blog/puberdade-adolescencia-terapia-ajuda-mudancas/">Site 2</a>
@@ -136,6 +148,5 @@
 
           
         </div>
-        <hr class="btmspace-50">
-      
+        <hr class="btmspace-50">      
 {%endblock content%}
